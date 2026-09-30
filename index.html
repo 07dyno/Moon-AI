@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FACIL SUPORTE - Biblioteca de Scripts</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">◆ FACIL SUPORTE</div>
+            <nav class="header-nav">
+                <button class="btn-cred" id="btn-cred">★ Creditos</button>
+                <button class="btn-admin">Painel Admin</button>
+            </nav>
+        </header>
+
+        <!-- Navigation -->
+        <div class="nav-back" id="nav-back" style="display:none;">
+            <button class="btn-back" id="btn-back">← Voltar</button>
+        </div>
+        <div class="search-wrap" id="search-wrap" style="display: block;">
+            <button class="btn-home">🏠 Inicio</button>
+            <div class="search-box" id="search-box">
+                <span class="s-icon">🔍</span>
+                <input type="text" id="search-input" placeholder="Buscar pastas..." autocomplete="off">
+                <button class="s-clear" id="s-clear">✕</button>
+            </div>
+            <div class="search-count" id="search-count"></div>
+        </div>
+
+        <!-- Main Content -->
+        <main class="main-content" id="main-content">
+            <section class="hero">
+                <h2>Biblioteca de Scripts e Conteudos</h2>
+                <p>Acesse scripts, codigos e conteudos organizados por categoria. Clique para visualizar e copiar.</p>
+            </section>
+            <div class="grid" id="grid">
+                <div class="card" data-fs-idx="0" style="position:relative">
+                    <button class="fs-like-btn"><span class="fs-like-icon">🤍</span><span class="fs-like-count">5</span></button>
+                    <div class="card-icon">📚</div>
+                    <div class="card-info">
+                        <h3>ARASTAR OBJTOS</h3>
+                        <p>Script com botão para arastar objetos</p>
+                        <div class="fs-locked-badge">🔒 Requer codigo</div>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </div>
+                <div class="card" data-fs-idx="1" style="position:relative">
+                    <button class="fs-like-btn"><span class="fs-like-icon">🤍</span><span class="fs-like-count">7</span></button>
+                    <div class="card-icon"><img src="https://plantturco.unaux.com//uploads/pastas/6ab8251f57f3e_1790453023.jpg" alt=""></div>
+                    <div class="card-info">
+                        <h3>IDENTIDADE</h3>
+                        <p>Seu sistema de indentidade lua</p>
+                        <div class="fs-locked-badge">🔒 Requer codigo</div>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </div>
+                <div class="card" data-fs-idx="2" style="position:relative">
+                    <button class="fs-like-btn"><span class="fs-like-icon">🤍</span><span class="fs-like-count">3</span></button>
+                    <div class="card-icon">📚</div>
+                    <div class="card-info">
+                        <h3>RANKING GLOBAL SISTEMA</h3>
+                        <p>Sistema fácil de RANKING de horas jogadas</p>
+                        <div class="fs-locked-badge">🔒 Requer codigo</div>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </div>
+                <div class="card" data-fs-idx="3" style="position:relative">
+                    <button class="fs-like-btn"><span class="fs-like-icon">🤍</span><span class="fs-like-count">3</span></button>
+                    <div class="card-icon"><img src="https://plantturco.unaux.com//uploads/pastas/6ab5ab17eac4f_1790290711.jpg" alt=""></div>
+                    <div class="card-info">
+                        <h3>SCRIPT BALÃO</h3>
+                        <p>segure para flutuar</p>
+                        <div class="fs-locked-badge">🔒 Requer codigo</div>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </div>
+                <div class="card" data-fs-idx="4" style="position:relative">
+                    <button class="fs-like-btn"><span class="fs-like-icon">🤍</span><span class="fs-like-count">8</span></button>
+                    <div class="card-icon"><img src="https://plantturco.unaux.com//uploads/pastas/6a7d17c869b2e_1786582984.webp" alt=""></div>
+                    <div class="card-info">
+                        <h3>SCRIPT ZOMBIE</h3>
+                        <p>Nessa pasta vc encontrará 2 scripts ! Pegue os 2 e adcione dentro do seu NPC todos 2 separados em scripts normais/serve Scripts porém, dentro do NPC e pronto! Basta ajusta velocidade , vida , dano 👍🆕</p>
+                        <div class="fs-locked-badge">🔒 Requer codigo</div>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>FACIL SUPORTE v2.1 - Sistema Profissional</p>
+            <p class="footer-sub">Todos os direitos reservados. Apenas visualizacao e copia permitidas.</p>
+        </footer>
+    </div>
+
+    <!-- Code Access Modal -->
+    <div id="fs-code-overlay" class="fs-code-overlay">
+        <button class="fs-code-close">×</button>
+        <div class="fs-code-modal">
+            <h3>🔒 Acesso Restrito</h3>
+            <p>Esta pasta requer um codigo de acesso.<br>Digite o codigo fornecido pelo administrador.</p>
+            <input type="text" class="fs-code-input" id="fs-code-input" placeholder="Digite o codigo..." maxlength="32" autocomplete="off">
+            <button class="fs-code-btn">🔑 Acessar Pasta</button>
+            <div class="fs-code-error" id="fs-code-error"></div>
+        </div>
+    </div>
+
+    <!-- Credits Modal -->
+    <div class="fs-cred-overlay" id="fs-cred-ov">
+        <div class="fs-cred-modal">
+            <div class="fs-cred-hd">
+                <h3><span>◆</span> Creditos</h3>
+                <button class="fs-cred-x">×</button>
+            </div>
+            <div class="fs-cred-bd">
+                <a class="fs-cred-item" href="https://www.youtube.com/@TiagoOTurco" target="_blank" rel="noopener">
+                    <div class="fs-cred-ico">🎥</div>
+                    <div class="fs-cred-info"><strong>YouTuber</strong><span>www.youtube.com/@TiagoOTurco</span></div>
+                    <div class="fs-cred-seta">↗</div>
+                </a>
+                <a class="fs-cred-item" href="https://discord.gg/7ju5qWyTnS" target="_blank" rel="noopener">
+                    <div class="fs-cred-ico">💬</div>
+                    <div class="fs-cred-info"><strong>Discord</strong><span>https://discord.gg/7ju5qWyTnS</span></div>
+                    <div class="fs-cred-seta">↗</div>
+                </a>
+            </div>
+            <div class="fs-cred-ver"><span>Versao <b>0.21.3.0</b></span></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

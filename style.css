@@ -1,0 +1,533 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0d0d0d;
+    color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid #222;
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.5px;
+}
+
+.header-nav {
+    display: flex;
+    gap: 10px;
+}
+
+.header-nav button {
+    background: transparent;
+    border: 1px solid #333;
+    color: #ccc;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+}
+
+.header-nav button:hover {
+    border-color: #555;
+    color: #fff;
+}
+
+.btn-cred {
+    border-color: #ffc107 !important;
+    color: #ffc107 !important;
+}
+
+/* Navigation */
+.search-wrap {
+    padding: 16px 0;
+}
+
+.btn-home {
+    display: inline-block;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    color: #ccc;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+    transition: all 0.2s;
+}
+
+.btn-home:hover {
+    background: #222;
+    color: #fff;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 0 14px;
+    transition: border-color 0.2s;
+}
+
+.search-box:focus-within {
+    border-color: #555;
+}
+
+.s-icon {
+    font-size: 1.1rem;
+    opacity: 0.6;
+}
+
+.search-box input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 12px 10px;
+    font-size: 0.95rem;
+}
+
+.search-box input::placeholder {
+    color: #666;
+}
+
+.s-clear {
+    background: transparent;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 4px 8px;
+    display: none;
+}
+
+.search-count {
+    margin-top: 8px;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+/* Hero */
+.hero {
+    text-align: center;
+    padding: 32px 16px 24px;
+}
+
+.hero h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.hero p {
+    color: #a0a0a0;
+    font-size: 0.95rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+    padding-bottom: 32px;
+}
+
+/* Card */
+.card {
+    background: #1a1a1a;
+    border: 1px solid #222;
+    border-radius: 14px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.25s;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    border-color: #3a3a3a;
+    background: #1e1e1e;
+    transform: translateY(-2px);
+}
+
+.card.hidden {
+    display: none;
+}
+
+/* Like Button */
+.fs-like-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: #222;
+    border: none;
+    border-radius: 20px;
+    padding: 4px 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.8rem;
+    color: #888;
+    z-index: 2;
+    transition: all 0.2s;
+}
+
+.fs-like-btn:hover {
+    background: #2a2a2a;
+}
+
+.fs-like-btn.liked .fs-like-icon {
+    color: #ff4757;
+}
+
+.fs-like-icon {
+    font-size: 0.9rem;
+}
+
+.fs-like-count {
+    font-weight: 600;
+}
+
+/* Card Icon */
+.card-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    background: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.card-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Card Info */
+.card-info h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.card-info p {
+    color: #a0a0a0;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+/* Locked Badge */
+.fs-locked-badge {
+    display: inline-block;
+    border: 1px solid #f44336;
+    color: #f44336;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+/* Card Arrow */
+.card-arrow {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: #555;
+    font-size: 1.2rem;
+    transition: all 0.2s;
+}
+
+.card:hover .card-arrow {
+    color: #888;
+    transform: translateX(4px);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 24px 0;
+    border-top: 1px solid #222;
+    color: #666;
+    font-size: 0.8rem;
+}
+
+.footer-sub {
+    margin-top: 4px;
+    font-size: 0.75rem;
+    color: #555;
+}
+
+/* Code Modal */
+.fs-code-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.fs-code-overlay.active {
+    display: flex;
+}
+
+.fs-code-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    color: #888;
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.fs-code-close:hover {
+    color: #fff;
+}
+
+.fs-code-modal {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 16px;
+    padding: 32px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.fs-code-modal h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+}
+
+.fs-code-modal p {
+    color: #a0a0a0;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.fs-code-input {
+    width: 100%;
+    background: #0d0d0d;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 12px 16px;
+    color: #fff;
+    font-size: 0.95rem;
+    outline: none;
+    margin-bottom: 16px;
+    transition: border-color 0.2s;
+}
+
+.fs-code-input:focus {
+    border-color: #555;
+}
+
+.fs-code-btn {
+    width: 100%;
+    background: #f44336;
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.fs-code-btn:hover {
+    background: #d32f2f;
+}
+
+.fs-code-error {
+    color: #f44336;
+    font-size: 0.85rem;
+    margin-top: 12px;
+    min-height: 1.2em;
+}
+
+/* Credits Modal */
+.fs-cred-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.fs-cred-overlay.active {
+    display: flex;
+}
+
+.fs-cred-modal {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 16px;
+    max-width: 420px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.fs-cred-hd {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    border-bottom: 1px solid #222;
+}
+
+.fs-cred-hd h3 {
+    font-size: 1.2rem;
+}
+
+.fs-cred-hd span {
+    color: #ffc107;
+}
+
+.fs-cred-x {
+    background: transparent;
+    border: none;
+    color: #888;
+    font-size: 1.6rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.fs-cred-x:hover {
+    color: #fff;
+}
+
+.fs-cred-bd {
+    padding: 16px 24px;
+}
+
+.fs-cred-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 0;
+    text-decoration: none;
+    color: #fff;
+    border-bottom: 1px solid #222;
+    transition: all 0.2s;
+}
+
+.fs-cred-item:last-child {
+    border-bottom: none;
+}
+
+.fs-cred-item:hover {
+    padding-left: 4px;
+}
+
+.fs-cred-ico {
+    font-size: 1.6rem;
+    width: 44px;
+    height: 44px;
+    background: #222;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.fs-cred-info {
+    flex: 1;
+}
+
+.fs-cred-info strong {
+    display: block;
+    font-size: 0.95rem;
+    margin-bottom: 2px;
+}
+
+.fs-cred-info span {
+    color: #888;
+    font-size: 0.8rem;
+}
+
+.fs-cred-seta {
+    color: #555;
+    font-size: 1.1rem;
+}
+
+.fs-cred-ver {
+    text-align: center;
+    padding: 16px 24px;
+    border-top: 1px solid #222;
+    color: #666;
+    font-size: 0.8rem;
+}
+
+.fs-cred-ver b {
+    color: #aaa;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h2 {
+        font-size: 1.3rem;
+    }
+
+    .header-nav button {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    .logo {
+        font-size: 1.1rem;
+    }
+}
